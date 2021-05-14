@@ -46,3 +46,31 @@ function ibenic_include_from_plugin( $template ) {
 - https://wordpress.stackexchange.com/questions/13378/add-custom-template-page-programmatically
 - https://jasonyingling.me/use-page-custom-post-type-archive-url-rewrites/
 - https://blog.kulturbanause.de/2020/01/wordpress-block-editor-gutenberg-fuer-custom-post-types-aktivieren/
+- https://developer.wordpress.org/reference/functions/wp_insert_post/
+
+## How to Extend Wordpress
+You should almost always write at last a plugin or use a plugin framework like @stealify/wordpress
+then you should use the hooks to define your behavior. and at last create programatical posts with 
+custom post types to store data and retrive it later via wp-query loops inside your plugin. To layout that 
+data you should use gutenberg blocks parsed by your plugin again that inserts the data.
+
+This little example should get you up and running when you need to do admin or user permission based stuff.
+```php
+function hf_Function(){
+    $user_ID = get_current_user_id(); 
+
+    if ($user_ID == 0) {
+        // The user ID is 0, therefore the current user is not logged in
+        return; // escape this function, without making any changes
+    }
+    // Run your cache requests here or wp loops anything
+    // Run your SQL queries here (using WordPress DB class)
+    global $wpdb;
+    // $wpdb->query($sql);
+}
+add_action('init', 'hf_Function');
+```
+
+
+## Security
+You should regular match your access logs for security problems and ban ips.
