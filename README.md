@@ -45,3 +45,4 @@ function ibenic_include_from_plugin( $template ) {
  ```
 - https://wordpress.stackexchange.com/questions/13378/add-custom-template-page-programmatically
 - https://jasonyingling.me/use-page-custom-post-type-archive-url-rewrites/
+- https://blog.kulturbanause.de/2020/01/wordpress-block-editor-gutenberg-fuer-custom-post-types-aktivieren/
