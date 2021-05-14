@@ -1,5 +1,6 @@
 # wordpress-engineering
-A Guide and Collection of notes
+A Guide and Collection of notes in general targeting ECMAScript Developers
+So Wordpress Plugins can be seen as express like Midelware. they get called with request parameters.
 
 
 ## Great Pages that i need to adapt and Condense a bit
